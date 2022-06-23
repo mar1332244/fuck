@@ -21,7 +21,7 @@ func main() {
         fmt.Println("argument error:\n\tunsupported file type")
         os.Exit(ARGUMENT_ERROR)
     }
-    interpretSrc(readSrc(os.Args[1]))
+    InterpretSrc(readSrc(os.Args[1]))
 }
 
 func readSrc(fname string) string {
@@ -45,11 +45,10 @@ func readSrc(fname string) string {
         fmt.Printf("io error:\n\t%s\n", err.Error())
         os.Exit(IO_ERROR)
     }
-    fmt.Println(src.String())
     return src.String()
 }
 
-func interpretSrc(src string) {
+func InterpretSrc(src string) {
     var i int
     var err error
     var c byte
@@ -108,10 +107,4 @@ func interpretSrc(src string) {
         fmt.Println("syntax error:\n\tunmatched [")
         os.Exit(SYNTAX_ERROR)
     }
-}
-
-func setUpRepl() {
-}
-
-func compileSrc(src string) {
 }
