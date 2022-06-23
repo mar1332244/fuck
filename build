@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+TARGET="./bin/main"
+BUILD_CMD="go build -o $TARGET"
+
+for FILE in $(ls ./src/*.go); do
+    BUILD_CMD="${BUILD_CMD} ${FILE}"
+done
+
+$BUILD_CMD
