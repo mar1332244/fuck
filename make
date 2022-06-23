@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-function clean()
-{
-    rm -rf ./bin/*
-}
-
 function build()
 {
     TARGET="./bin/main"
@@ -17,20 +12,15 @@ function build()
     $BUILD_CMD
 }
 
-function run()
-{
-    ./bin/main
-}
-
 case $1 in
     "build")
         build
     ;;
     "run")
-        run
+        ./bin/main
     ;;
     "clean")
-        clean
+        rm -rf ./bin/*
     ;;
     *)
         echo "invalid command"
